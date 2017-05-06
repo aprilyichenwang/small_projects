@@ -8,8 +8,7 @@ class Solution(object):
         return nums
 
 
-x=Solution()
-print x.moveZeroes([3,-1,0,2,8,0,4])
+
 
 
 class Solution(object):
@@ -22,3 +21,14 @@ class Solution(object):
             if nums[i]==0:
                 nums.remove(0)
                 nums.append(0)
+
+
+
+# A few notes:
+# when using while loop, it is important to set up the stopping point
+# .pop() involve the concept of pointer
+# see whether ls.remove() will perform the same task first
+
+
+x=Solution()
+print x.moveZeroes([3,-1,0,2,8,0,4])

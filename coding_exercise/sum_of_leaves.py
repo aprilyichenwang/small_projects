@@ -31,3 +31,39 @@ class Solution(object):
 
 x=Solution()
 print x.sumOfLeftLeaves([1,2,3,4,5])
+
+##########################
+# why this does not work?
+##########################
+class Solution(object):
+    def isLeaf(self, node):
+        return node and not (node.left or node.right)
+
+    def sumOfLeftLeaves(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        # Note, this questions asks for the leaf leaves only
+        # (need to see whether it is leaf or not)
+        sum_ls = []
+        if root:  # verify root is not None
+            queue = [root]
+        else:
+            return 0
+        while queue:
+            node = queue.pop()
+            if not self.isLeaf(node):
+                if self.isLeaf(node.left):
+                    sum_ls.append(node.left.val)
+                else:
+                    queue.extend([node.left])
+                if not self.isLeaf(node.right):
+                    queue.extend([node.right])
+
+            if node and node.left and node.right:
+                queue.extend([node.left, node.right])
+                if node.left.left is None:
+                    sum_ls.append(node.left.val)
+
+        return sum(sum_ls)

@@ -35,4 +35,5 @@ x=Solution()
 print x.findMaxConsecutiveOnes([1])  # 1
 print x.findMaxConsecutiveOnes([1,1,0,1,1,1])  # 3
 print x.findMaxConsecutiveOnes([0,1]) #1
+print x.findMaxConsecutiveOnes([1,0,1,1,0,1])
 

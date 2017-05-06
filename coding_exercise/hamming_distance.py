@@ -1,3 +1,26 @@
+# The Hamming distance between two integers
+# is the number of positions at which the corresponding
+# bits are different.
+
+# given two integers x, y, calcualte humming distance
+
+# d1=min(x,y)
+# d2=max(x,y)
+# db1=binary(d1)[2:]
+# db2=binary(d2)[2:]
+
+# left pad db1 with 0s to match the binary length of db2
+# zfill(xc, len(yc))
+
+# diff=0
+#for i in range(len(db1)):
+# if db1[i]!=db2[i]:
+#     diff+=1
+# return diff
+
+
+
+
 class Solution(object):
     def hammingDistance(self, x, y):
         """

@@ -34,5 +34,30 @@ class Solution(object):
 
         return map(dic.get, nums)
 
+
+
+class Solution(object):
+    def findRelativeRanks(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[str]
+        """
+        # return the rank index
+        # replace rank index with medal
+
+        sorted_nums = sorted(nums, reverse=True)
+        dic = {}
+        medal = {0: 'Gold Medal', 1: 'Silver Medal', 2: 'Bronze Medal'}
+        for i, n in enumerate(sorted_nums):
+            if i in medal:
+                dic[n] = medal[i]
+            else:
+                dic[n] = str(i + 1)
+        output = []
+        for n in nums:
+            output.append(dic[n])
+        return output
+
+
 x=Solution()
 print x.findRelativeRanks([5,4,3,2,1])

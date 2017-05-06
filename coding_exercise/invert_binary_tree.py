@@ -16,3 +16,13 @@ class Solution(object):
             root.left,root.right=invert(root.right),invert(root.left)
             return root
 
+
+    # DFS
+    def invertTree(self, root):
+        stack = [root]
+        while stack:
+            node = stack.pop()
+            if node:
+                node.left, node.right = node.right, node.left
+                stack.extend([node.right, node.left])
+        return root

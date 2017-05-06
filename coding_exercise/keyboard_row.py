@@ -4,7 +4,9 @@ class Solution(object):
         :type words: List[str]
         :rtype: List[str]
         """
-        return [word for word in words for row in (set('qwertyuiop'), set('asdfghjkl'), set('zxcvbnm')) if set(word.lower())<= row]
+        return [word for word in words for row in
+                (set('qwertyuiop'), set('asdfghjkl'), set('zxcvbnm'))
+                if set(word.lower())<= row]
 
 # set(['qwertyuiop'])
 # set(['asdfghjkl'])

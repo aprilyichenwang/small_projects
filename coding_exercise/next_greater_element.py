@@ -61,6 +61,36 @@ def nextGreaterElement2(nums):
     return result_ls
 
 
+def nextGreaterElement(self, findNums, nums):
+    def helper(num):
+        for tmp in nums[nums.index(num):]:
+            if tmp > num:
+                return tmp
+        return -1
+
+    return map(helper, findNums)
+
+
+class Solution(object):
+    def nextGreaterElement(self, findNums, nums):
+        """
+        :type findNums: List[int]
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        ls=[]
+        for n in findNums:
+            i=nums.index(n)
+            ls_right=nums[i+1:]
+            nu=-1
+            for x in ls_right:
+                if x>n:
+                    nu=x
+                    break
+            ls.append(nu)
+        return ls
+
+
 
 # how to deal with the list circulation
 print nextGreaterElement2([1,2,1])
